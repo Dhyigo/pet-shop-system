@@ -1,0 +1,19 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "email": "ryan@email.com",
+      "password": "12345678"
+    },
+    {
+      "id": 2,
+      "email": "adriel@email.com",
+      "password": "12345678"
+    },
+    {
+      "id": 3,
+      "email": "diego@email.com",
+      "password": "12345678"
+    }
+  ]
+}
