@@ -5,6 +5,7 @@ import { zodResolver } from '@hookform/resolvers/zod';
 import './Login.css';
 import { useNavigate } from 'react-router-dom';
 import { userServices, ApiException } from '../services';
+import { authStore } from '../store';
 
 const loginSchema = z.object({
   email: z.string().email('Coloque um email válido'),
@@ -23,13 +24,14 @@ export function Login() {
 
   const loginUser = async (data: LoginData) => {
     const { email, password } = data;
-    const responso = await userServices.login(email, password);
+    const response = await userServices.login(email, password);
 
-    if (responso instanceof ApiException) {
-      alert(responso.message);
+    if (response instanceof ApiException) {
+      alert(response.message);
       return;
     }
 
+    authStore.save(response);
     navigate('/');
   };
 
