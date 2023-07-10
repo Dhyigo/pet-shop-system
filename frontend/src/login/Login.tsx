@@ -1,7 +1,11 @@
+/* eslint-disable jsx-a11y/label-has-associated-control */
 import { z } from 'zod';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import './Login.css';
+import { useNavigate } from 'react-router-dom';
+import { userServices } from '../services/api/auth/authService';
+import { ApiException } from '../services/api/ApiException';
 
 const loginSchema = z.object({
   email: z.string().email('Coloque um email válido'),
@@ -11,14 +15,23 @@ const loginSchema = z.object({
 type LoginData = z.infer<typeof loginSchema>;
 
 export function Login() {
+  const navigate = useNavigate();
   const { register, handleSubmit, formState } = useForm<LoginData>({
     resolver: zodResolver(loginSchema),
   });
 
   const { errors } = formState;
 
-  const loginUser = (data: LoginData) => {
-    console.log('Usuário logado', data);
+  const loginUser = async (data: LoginData) => {
+    const { email, password } = data;
+    const responso = await userServices.login(email, password);
+
+    if (responso instanceof ApiException) {
+      alert(responso.message);
+      return;
+    }
+
+    navigate('/');
   };
 
   return (
