@@ -1,15 +1,14 @@
 import { User } from '../../services/api/auth/authService';
+import { storage } from '../utils/localStorege';
 
 const KEY = '@auth';
 
 const save = (data: User): void => {
-  return localStorage.setItem(KEY, JSON.stringify(data));
+  storage.set(KEY, data);
 };
 
 const get = (): User | null => {
-  const auth = localStorage.getItem(KEY);
-
-  return auth ? JSON.parse(auth) : null;
+  return storage.get(KEY);
 };
 
 export const authStore = {
