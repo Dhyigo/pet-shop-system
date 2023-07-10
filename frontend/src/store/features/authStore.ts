@@ -1,5 +1,5 @@
 import { User } from '../../services/api/auth/authService';
-import { storage } from '../utils/localStorege';
+import { storage } from '../utils/localStorage';
 
 const KEY = '@auth';
 
