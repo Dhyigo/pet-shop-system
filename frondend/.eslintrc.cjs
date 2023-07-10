@@ -20,5 +20,6 @@ module.exports = {
     'react-refresh/only-export-components': 'warn',
     'react/react-in-jsx-scope': 0,
     'import/extensions': 0,
+    'import/prefer-default-export': 0,
   },
-}
+};
