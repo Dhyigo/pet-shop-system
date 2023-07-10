@@ -1,1 +1,1 @@
-export * from './feature/authStore';
+export * from './features/authStore';
