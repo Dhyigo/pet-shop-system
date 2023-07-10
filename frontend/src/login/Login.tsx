@@ -4,8 +4,7 @@ import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import './Login.css';
 import { useNavigate } from 'react-router-dom';
-import { userServices } from '../services/api/auth/authService';
-import { ApiException } from '../services/api/ApiException';
+import { userServices, ApiException } from '../services';
 
 const loginSchema = z.object({
   email: z.string().email('Coloque um email válido'),
