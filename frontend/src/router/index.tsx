@@ -1,5 +1,5 @@
 import { Navigate, Route, Routes } from 'react-router-dom';
-import { Login } from '../login/Login';
+import { Login } from '../pages/login/Login';
 import { ProtectedRoutes } from './ProtectedRoutes';
 
 export function AppRoutes() {
