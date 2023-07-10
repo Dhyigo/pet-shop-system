@@ -1,5 +1,5 @@
 import { Navigate, Route, Routes } from 'react-router-dom';
-import { Login } from '../page/Login';
+import { Login } from '../login/Login';
 
 export function AppRoutes() {
   return (
