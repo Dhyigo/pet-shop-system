@@ -1,4 +1,4 @@
-const set = (key: string, data: any[] | Record<string, any>): void => {
+const set = (key: string, data: any): void => {
   localStorage.setItem(key, JSON.stringify(data));
 };
 
