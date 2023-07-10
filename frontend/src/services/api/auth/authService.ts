@@ -1,7 +1,7 @@
 import { ApiException } from '../ApiException';
 import { api } from '../api';
 
-interface User {
+export interface User {
   id: number;
   email: string;
   password: string;
