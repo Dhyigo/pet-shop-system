@@ -1,11 +1,9 @@
-/* eslint-disable jsx-a11y/label-has-associated-control */
 import { z } from 'zod';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import './Login.css';
 import { useNavigate } from 'react-router-dom';
 import { userServices, ApiException } from '../services';
-import { authStore } from '../store';
 
 const loginSchema = z.object({
   email: z.string().email('Coloque um email válido'),
@@ -31,7 +29,6 @@ export function Login() {
       return;
     }
 
-    authStore.save(response);
     navigate('/');
   };
 

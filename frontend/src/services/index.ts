@@ -1,2 +1,2 @@
-export * from './api/ApiException';
+export * from '../models/Exceptions';
 export * from './api/auth/authService';
