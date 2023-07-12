@@ -5,6 +5,7 @@ import './Login.css';
 import { useNavigate } from 'react-router-dom';
 import { userServices, ApiException } from '../../services';
 import { Form } from '../../components';
+import { BiSolidUserCircle } from 'react-icons/bi';
 
 const loginSchema = z.object({
   email: z.string().email('Coloque um email válido'),
@@ -29,7 +30,7 @@ export function Login() {
     const response = await userServices.login(email, password);
 
     if (response instanceof ApiException) {
-      alert(response.message);
+      loginUserForm.setError('root', { message: response.message });
       return;
     }
 
@@ -38,8 +39,11 @@ export function Login() {
 
   return (
     <div className="card shadow rounded">
-      <div className="card-header bg-success h6 fw-normal lh-base text-white text-center">
-        Entre com sua conta
+      <div className="card-header bg-success h6 fw-normal lh-base text-white text-center ">
+        <BiSolidUserCircle size={70} />
+        <div>
+          <small>Entre com sua conta</small>
+        </div>
       </div>
       <div className="card-body">
         <FormProvider {...loginUserForm}>
@@ -55,6 +59,10 @@ export function Login() {
               <Form.Input name="password" placeholder="Digite sua senha" />
               <Form.ErrorMessage field="password" />
             </Form.Field>
+
+            <div className="text-center">
+              <Form.ErrorMessage field="root" />
+            </div>
 
             <Form.Button isLoading={isLoading} text="Entrar" />
 
