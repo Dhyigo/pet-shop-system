@@ -38,28 +38,30 @@ export function Login() {
 
   return (
     <div className="card shadow rounded">
-      <h1 className="card-header bg-success h6 fw-normal lh-base text-white text-center">
+      <div className="card-header bg-success h6 fw-normal lh-base text-white text-center">
         Entre com sua conta
-      </h1>
-      <FormProvider {...loginUserForm}>
-        <Form.Root onSubmit={handleSubmit(loginUser)}>
-          <Form.Field>
-            <Form.Label htmlFor="email">Email</Form.Label>
-            <Form.Input name="email" placeholder="Digite seu email" />
-            <Form.ErrorMessage field="email" />
-          </Form.Field>
+      </div>
+      <div className="card-body">
+        <FormProvider {...loginUserForm}>
+          <Form.Root onSubmit={handleSubmit(loginUser)}>
+            <Form.Field>
+              <Form.Label htmlFor="email">Email</Form.Label>
+              <Form.Input name="email" placeholder="Digite seu email" />
+              <Form.ErrorMessage field="email" />
+            </Form.Field>
 
-          <Form.Field>
-            <Form.Label htmlFor="password">Senha</Form.Label>
-            <Form.Input name="password" placeholder="Digite sua senha" />
-            <Form.ErrorMessage field="password" />
-          </Form.Field>
+            <Form.Field>
+              <Form.Label htmlFor="password">Senha</Form.Label>
+              <Form.Input name="password" placeholder="Digite sua senha" />
+              <Form.ErrorMessage field="password" />
+            </Form.Field>
 
-          <Form.Button isLoading={isLoading} text="Entrar" />
+            <Form.Button isLoading={isLoading} text="Entrar" />
 
-          <Form.Link to="/criar-conta" text="Não possui uma conta?" />
-        </Form.Root>
-      </FormProvider>
+            <Form.Link to="/criar-conta" text="Não possui uma conta?" />
+          </Form.Root>
+        </FormProvider>
+      </div>
     </div>
   );
 }
