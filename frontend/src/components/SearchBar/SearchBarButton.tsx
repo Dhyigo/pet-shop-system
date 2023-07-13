@@ -1,13 +1,31 @@
 import { ButtonHTMLAttributes } from 'react';
+import { AiOutlineSearch } from 'react-icons/ai';
 
 interface SearchBarButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
-  className: string;
+  variant?:
+    | 'primary'
+    | 'secondary'
+    | 'success'
+    | 'danger'
+    | 'warning'
+    | 'info'
+    | 'dark'
+    | 'link';
+  className?: string;
 }
 
-export function SearchBarButton({ className, ...rest }: SearchBarButtonProps) {
+export function SearchBarButton({
+  variant,
+  className,
+  ...rest
+}: SearchBarButtonProps) {
   return (
-    <button className={`btn btn-success ${className}`} type="submit" {...rest}>
-      <i className="bi bi-search" />
+    <button
+      className={`btn btn-${variant || 'primary'} ${className}`}
+      type="submit"
+      {...rest}
+    >
+      <AiOutlineSearch />
     </button>
   );
 }
