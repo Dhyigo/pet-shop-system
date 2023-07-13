@@ -1,5 +1,5 @@
 import { ButtonHTMLAttributes } from 'react';
-import { AiOutlineSearch } from 'react-icons/ai';
+import { ImSearch } from 'react-icons/im';
 
 interface SearchBarButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   variant?:
@@ -10,6 +10,7 @@ interface SearchBarButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
     | 'warning'
     | 'info'
     | 'dark'
+    | 'light'
     | 'link';
   className?: string;
 }
@@ -21,13 +22,13 @@ export function SearchBarButton({
 }: SearchBarButtonProps) {
   return (
     <button
-      className={`d-flex align-items-center justify-content-center btn btn-${
+      className={`d-flex align-items-center justify-content-center btn btn-outline-${
         variant || 'primary'
       } ${className}`}
       type="submit"
       {...rest}
     >
-      <AiOutlineSearch />
+      <ImSearch size={19} />
     </button>
   );
 }
