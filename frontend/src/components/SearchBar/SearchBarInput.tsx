@@ -1,7 +1,7 @@
 import { InputHTMLAttributes } from 'react';
 
 interface SearchBarInputProps extends InputHTMLAttributes<HTMLInputElement> {
-  className: string;
+  className?: string;
 }
 
 export function SearchBarInput({ className, ...rest }: SearchBarInputProps) {

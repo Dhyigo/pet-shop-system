@@ -21,7 +21,9 @@ export function SearchBarButton({
 }: SearchBarButtonProps) {
   return (
     <button
-      className={`btn btn-${variant || 'primary'} ${className}`}
+      className={`d-flex align-items-center justify-content-center btn btn-${
+        variant || 'primary'
+      } ${className}`}
       type="submit"
       {...rest}
     >
