@@ -22,7 +22,7 @@ export function Header() {
   return (
     <header className="navbar navbar-expand-lg  navbar-dark bg-success">
       <div className="container">
-        <Link className="navbar-brand" to="/">
+        <Link className="navbar-brand fs-4" to="/">
           Pet Shop System
         </Link>
 
@@ -38,7 +38,7 @@ export function Header() {
           <NavBar.Body>
             <SearchBar.Root onSubmit={handleSearch} className="mb-3 my-lg-0">
               <SearchBar.Input placeholder="Pesquise..." />
-              <SearchBar.Button />
+              <SearchBar.Button variant="light" />
             </SearchBar.Root>
 
             <NavBar.Menu>
