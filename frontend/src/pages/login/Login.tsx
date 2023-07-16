@@ -38,37 +38,39 @@ export function Login() {
   };
 
   return (
-    <div className="card shadow rounded">
-      <div className="card-header bg-success h6 fw-normal lh-base text-white text-center ">
-        <BiSolidUserCircle size={70} />
-        <div>
-          <small>Entre com sua conta</small>
+    <div className="login-body">
+      <div className="card shadow rounded">
+        <div className="card-header bg-success h6 fw-normal lh-base text-white text-center ">
+          <BiSolidUserCircle size={70} />
+          <div>
+            <small>Entre com sua conta</small>
+          </div>
         </div>
-      </div>
-      <div className="card-body">
-        <FormProvider {...loginUserForm}>
-          <Form.Root onSubmit={handleSubmit(loginUser)}>
-            <Form.Field>
-              <Form.Label htmlFor="email">Email</Form.Label>
-              <Form.Input name="email" placeholder="Digite seu email" />
-              <Form.ErrorMessage field="email" />
-            </Form.Field>
+        <div className="card-body">
+          <FormProvider {...loginUserForm}>
+            <Form.Root onSubmit={handleSubmit(loginUser)}>
+              <Form.Field>
+                <Form.Label htmlFor="email">Email</Form.Label>
+                <Form.Input name="email" placeholder="Digite seu email" />
+                <Form.ErrorMessage field="email" />
+              </Form.Field>
 
-            <Form.Field>
-              <Form.Label htmlFor="password">Senha</Form.Label>
-              <Form.Input name="password" placeholder="Digite sua senha" />
-              <Form.ErrorMessage field="password" />
-            </Form.Field>
+              <Form.Field>
+                <Form.Label htmlFor="password">Senha</Form.Label>
+                <Form.Input name="password" placeholder="Digite sua senha" />
+                <Form.ErrorMessage field="password" />
+              </Form.Field>
 
-            <div className="text-center">
-              <Form.ErrorMessage field="root" />
-            </div>
+              <div className="text-center">
+                <Form.ErrorMessage field="root" />
+              </div>
 
-            <Form.Button isLoading={isLoading} text="Entrar" />
+              <Form.Button isLoading={isLoading} text="Entrar" />
 
-            <Form.Link to="/criar-conta" text="Não possui uma conta?" />
-          </Form.Root>
-        </FormProvider>
+              <Form.Link to="/criar-conta" text="Não possui uma conta?" />
+            </Form.Root>
+          </FormProvider>
+        </div>
       </div>
     </div>
   );
