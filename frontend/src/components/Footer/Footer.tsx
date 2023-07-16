@@ -1,5 +1,3 @@
-import { BsFacebook } from 'react-icons/bs';
-
 export function Footer() {
   return (
     <footer>
