@@ -1,127 +1,101 @@
-import { Header } from '../../components';
-import { BsSearch } from 'react-icons/bs';
+import { Header, Footer, Table } from '../../components';
+import { BsSearch, BsFillCalendarCheckFill } from 'react-icons/bs';
+import { MdPets } from 'react-icons/md';
+import { ImProfile } from 'react-icons/im';
+import { SiHomeassistantcommunitystore } from 'react-icons/si';
+import { HiLocationMarker } from 'react-icons/hi';
 
 export function Home() {
   return (
     <div>
+      {/* TODO: REMOVER HEADER DAQUI, CRIAR UM BASE TEMPLATE (COM HEADER E NAVBAR/SIDEBAR)*/}
       <Header />
-      {/* WIP: apenas montando ideias inicias do layout, n precisa refatorar */}
-      <div className="row">
-        <div className="col-12 m-l-5 mr-5 mt-5 text-center">
-          <h3>
-            <BsSearch size={40} />
-            Petshop proximas
-          </h3>
-        </div>
-      </div>
-      <div className="row">
-        <div className="col-2"></div>
-        <div className="col-12">
-          <table className="table table-success shadow">
-            <thead>
-              <tr>
-                <th scope="col">#</th>
-                <th scope="col">First</th>
-                <th scope="col">Last</th>
-                <th scope="col">Handle</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <th scope="row">1</th>
-                <td>Mark</td>
-                <td>Otto</td>
-                <td>@mdo</td>
-              </tr>
-              <tr>
-                <th scope="row">2</th>
-                <td>Jacob</td>
-                <td>Thornton</td>
-                <td>@fat</td>
-              </tr>
-              <tr>
-                <th scope="row">3</th>
-                <td>Larry</td>
-                <td>the Bird</td>
-                <td>@twitter</td>
-              </tr>
-              <tr>
-                <th scope="row">1</th>
-                <td>Mark</td>
-                <td>Otto</td>
-                <td>@mdo</td>
-              </tr>
 
-              <tr>
-                <th scope="row">1</th>
-                <td>Mark</td>
-                <td>Otto</td>
-                <td>@mdo</td>
-              </tr>
-              <tr>
-                <th scope="row">1</th>
-                <td>Mark</td>
-                <td>Otto</td>
-                <td>@mdo</td>
-              </tr>
-              <tr>
-                <th scope="row">1</th>
-                <td>Mark</td>
-                <td>Otto</td>
-                <td>@mdo</td>
-              </tr>
-            </tbody>
-          </table>
+      <div className="row m-3">
+        <div className="col-12">
+          <div className="card mt-3 shadow">
+            <div className="card-header bg-success text-white p-4">
+              <div className="row">
+                <div className="col-4 text-white">
+                  <h3>
+                    <BsSearch size={30} /> PetShops Próximas
+                  </h3>
+                </div>
+                <div className="col-4">
+                  <div className="input-group">
+                    <div className="input-group-prepend">
+                      <span
+                        className="input-group-text bg-light"
+                        id="basic-addon1"
+                      >
+                        <BsSearch size={30} />
+                      </span>
+                    </div>
+                    <input
+                      type="text"
+                      className="form-control"
+                      placeholder="Encontre Petshops próximas"
+                    />
+                  </div>
+                </div>
+                <div className="col-4 text-center">
+                  <div className="text-center">
+                    <HiLocationMarker color="white" size={25} />
+                  </div>
+                  <small>Eldorado do sul, RS</small>
+                </div>
+              </div>
+            </div>
+
+            <div className="card-body p-0">
+              <Table />
+            </div>
+          </div>
         </div>
         <div className="col-2"></div>
       </div>
-      <div className="row">
+
+      {/* TODO: COMPONENTIZAR CARDS*/}
+      <div className="row m-3 mt-5">
         <div className="col-3">
-          <div className="card shadow">
-            <div className="card-header bg-success text-white">
-              Encontrar PetShops próximas
-            </div>
-            <div className="card-body">
-              Aqui a ideia é criar um sistema de busca para de petshops com base
-              na localização do usuário (talvez usando apis de gps?)
-            </div>
+          <div
+            className="card shadow bg-success d-flex justify-content-center align-items-center text-white"
+            style={{ height: '300px' }}
+          >
+            <MdPets size={100} color="white" />
+            <h4 className="mt-5">Meus PETS</h4>
           </div>
         </div>
         <div className="col-3">
-          <div className="card shadow">
-            <div className="card-header bg-success text-white">
-              Histórico agendamentos
-            </div>
-            <div className="card-body">
-              Ver histórico de agendamentos que o usuário fez, exibindo
-              informações como: Dia, horário, pet, empresa que realizou o
-              serviço, valores e etc
-            </div>
+          <div
+            className="card shadow bg-success d-flex justify-content-center align-items-center text-white"
+            style={{ height: '300px' }}
+          >
+            <BsFillCalendarCheckFill size={100} color="white" />
+            <h4 className="mt-5">Agendamentos</h4>{' '}
           </div>
         </div>
         <div className="col-3">
-          <div className="card shadow">
-            <div className="card-header bg-success text-white">Meus pets</div>
-            <div className="card-body">
-              Sistema de cadastro de pets, cada conta de usuário pode cadastrar
-              um perfil de seu pet que será vinculado a sua conta
-            </div>
+          <div
+            className="card shadow bg-success d-flex justify-content-center align-items-center text-white"
+            style={{ height: '300px' }}
+          >
+            <ImProfile size={100} color="white" />
+            <h4 className="mt-5">Minha conta</h4>{' '}
           </div>
         </div>
         <div className="col-3">
-          <div className="card shadow">
-            <div className="card-header bg-success text-white">
-              Abrir empresa
-            </div>
-            <div className="card-body">
-              Sistema onde um usuário de conta do tipo: NORMAL, pode transformar
-              sua conta para o tipo: EMPRESARIAL, onde ela irá fornecer seu
-              serviço de petshop para usuário normals. Contas empresariais
-              possuirão funcionalidades diferentes dentro do sistema.
-            </div>
+          <div
+            className="card shadow bg-success d-flex justify-content-center align-items-center text-white"
+            style={{ height: '300px' }}
+          >
+            <SiHomeassistantcommunitystore size={100} color="white" />
+            <h4 className="mt-5">Minha empresa</h4>{' '}
           </div>
         </div>
       </div>
+
+      <Footer />
     </div>
   );
 }
