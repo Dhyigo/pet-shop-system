@@ -39,7 +39,7 @@ export function Login() {
 
   return (
     <div className="login-body">
-      <div className="card shadow rounded">
+      <div className="card card-login shadow rounded">
         <div className="card-header bg-success h6 fw-normal lh-base text-white text-center ">
           <BiSolidUserCircle size={70} />
           <div>
