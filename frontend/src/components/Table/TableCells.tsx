@@ -1,5 +1,5 @@
 interface Data {
-  id: number;
+  id: number | string;
 }
 
 interface TableCellsProps {
