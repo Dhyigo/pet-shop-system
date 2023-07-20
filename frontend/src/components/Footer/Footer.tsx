@@ -12,7 +12,31 @@ export function Footer() {
           direitos reservados.
         </text>
         <text x="80%" y="95%" fontFamily="Verdana" fontSize="9" fill="white">
-          Adriel Santos, Diego, Ryan Menezes
+          <a
+            href="https://github.com/AdrielSantoss"
+            target="_blank"
+            rel="noreferrer"
+            className="text-light"
+          >
+            Adriel Santos
+          </a>
+          <a
+            href="https://github.com/Dhyigo"
+            className="text-light"
+            target="_blank"
+            rel="noreferrer"
+          >
+            , Diego Silva
+          </a>
+
+          <a
+            href="https://github.com/LordRyanII"
+            className="text-light"
+            target="_blank"
+            rel="noreferrer"
+          >
+            , Ryan Menezes
+          </a>
         </text>
       </svg>
     </footer>
