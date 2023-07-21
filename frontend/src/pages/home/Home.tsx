@@ -3,12 +3,14 @@ import { MdPets } from 'react-icons/md';
 import { ImProfile } from 'react-icons/im';
 import { SiHomeassistantcommunitystore } from 'react-icons/si';
 import { HiLocationMarker } from 'react-icons/hi';
-import { Button, Col, Modal, Row } from 'react-bootstrap';
+import { Button, Card, Col, Modal, Row } from 'react-bootstrap';
 import { FormProvider, useForm } from 'react-hook-form';
 import { z } from 'zod';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { useState } from 'react';
-import { Header, Footer, Table, Form, CardIcon } from '../../components';
+import { Table, Form, CardIcon } from '../../components';
+import { LayoutBase } from '../../layouts/LayoutBase';
+import { SearchBar } from '../../components/SearchBar';
 
 interface PetShopData {
   id: number | string;
@@ -80,72 +82,55 @@ export function Home() {
   };
 
   return (
-    <div>
-      {/* TODO: REMOVER HEADER DAQUI, CRIAR UM BASE TEMPLATE (COM HEADER E NAVBAR/SIDEBAR) */}
-      <Header />
-
-      <div className="row m-3">
-        <div className="col-12">
-          <div className="card mt-3 shadow">
-            <div className="card-header bg-success text-white p-4">
-              <div className="row">
-                <div className="col-4 text-white">
-                  <h3>
-                    <BsSearch size={30} /> PetShops Próximas
-                  </h3>
-                </div>
-                <div className="col-4">
-                  <div className="input-group">
-                    <div className="input-group-prepend">
-                      <span
-                        className="input-group-text bg-light"
-                        id="basic-addon1"
-                      >
-                        <BsSearch size={30} />
-                      </span>
-                    </div>
-                    <input
-                      type="text"
-                      className="form-control"
-                      placeholder="Encontre Petshops próximas"
-                    />
-                  </div>
-                </div>
-                <div className="col-4 text-center">
-                  <div className="text-center">
-                    <HiLocationMarker color="white" size={25} />
-                  </div>
-                  <small>Eldorado do sul, RS</small>
-                </div>
+    <LayoutBase>
+      <Card className="m-4 shadow">
+        <Card.Header className="bg-success text-light p-4">
+          <Row className="align-items-center">
+            <Col>
+              <h3>
+                <BsSearch size={30} /> PetShops Próximas
+              </h3>
+            </Col>
+            <Col>
+              <SearchBar.Root
+                onSubmit={() => alert('Busca em desenvolvimento')}
+              >
+                <SearchBar.Button variant="light" />
+                <SearchBar.Input />
+              </SearchBar.Root>
+            </Col>
+            <Col className="text-center">
+              <div className="text-center">
+                <HiLocationMarker color="white" size={25} />
               </div>
-            </div>
+              <small>Eldorado do sul, RS</small>
+            </Col>
+          </Row>
+        </Card.Header>
 
-            <div className="card-body p-0">
-              <Table.Root striped>
-                <Table.Head>
-                  <Table.Row>
-                    <Table.Headers headers={tableHeaders} />
-                  </Table.Row>
-                </Table.Head>
+        <Card.Body>
+          <Table.Root striped>
+            <Table.Head>
+              <Table.Row>
+                <Table.Headers headers={tableHeaders} />
+              </Table.Row>
+            </Table.Head>
 
-                <Table.Body>
-                  {tableData.map((data) => (
-                    <Table.Row key={data.id}>
-                      <Table.Cells data={data} />
-                      <td>
-                        <Button onClick={() => handleOpenModal(data)}>
-                          Agendar
-                        </Button>
-                      </td>
-                    </Table.Row>
-                  ))}
-                </Table.Body>
-              </Table.Root>
-            </div>
-          </div>
-        </div>
-        <div className="col-2" />
-      </div>
+            <Table.Body>
+              {tableData.map((data) => (
+                <Table.Row key={data.id}>
+                  <Table.Cells data={data} />
+                  <td>
+                    <Button onClick={() => handleOpenModal(data)}>
+                      Agendar
+                    </Button>
+                  </td>
+                </Table.Row>
+              ))}
+            </Table.Body>
+          </Table.Root>
+        </Card.Body>
+      </Card>
 
       <Modal show={openModal} onHide={() => setOpenModal(false)}>
         <Modal.Header closeButton>
@@ -209,8 +194,6 @@ export function Home() {
           />
         </Col>
       </Row>
-
-      <Footer />
-    </div>
+    </LayoutBase>
   );
 }
