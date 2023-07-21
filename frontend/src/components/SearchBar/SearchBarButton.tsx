@@ -1,34 +1,19 @@
-import { ButtonHTMLAttributes } from 'react';
-import { ImSearch } from 'react-icons/im';
+import { Button, ButtonProps } from 'react-bootstrap';
+import { BsSearch } from 'react-icons/bs';
 
-interface SearchBarButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
-  variant?:
-    | 'primary'
-    | 'secondary'
-    | 'success'
-    | 'danger'
-    | 'warning'
-    | 'info'
-    | 'dark'
-    | 'light'
-    | 'link';
+interface SearchBarButtonProps extends ButtonProps {
   className?: string;
 }
 
-export function SearchBarButton({
-  variant,
-  className,
-  ...rest
-}: SearchBarButtonProps) {
+export function SearchBarButton({ className, ...rest }: SearchBarButtonProps) {
   return (
-    <button
-      className={`d-flex align-items-center justify-content-center btn btn-outline-${
-        variant || 'primary'
-      } ${className}`}
+    <Button
+      className={`d-flex align-items-center justify-content-center ${className}`}
       type="submit"
       {...rest}
     >
-      <ImSearch size={19} />
-    </button>
+      <BsSearch size={25} />
+      {/* <ImSearch size={19} /> */}
+    </Button>
   );
 }

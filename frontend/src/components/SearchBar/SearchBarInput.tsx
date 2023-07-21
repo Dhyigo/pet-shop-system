@@ -1,16 +1,7 @@
-import { InputHTMLAttributes } from 'react';
+import { Form, FormControlProps } from 'react-bootstrap';
 
-interface SearchBarInputProps extends InputHTMLAttributes<HTMLInputElement> {
-  className?: string;
-}
+type SearchBarInputProps = FormControlProps;
 
-export function SearchBarInput({ className, ...rest }: SearchBarInputProps) {
-  return (
-    <input
-      className={`form-control me-2 ${className || ''}`}
-      type="search"
-      aria-label="Search"
-      {...rest}
-    />
-  );
+export function SearchBarInput(props: SearchBarInputProps) {
+  return <Form.Control type="search" aria-label="Search" {...props} />;
 }

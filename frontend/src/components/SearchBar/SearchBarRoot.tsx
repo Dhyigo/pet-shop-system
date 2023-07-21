@@ -1,6 +1,7 @@
-import { FormEvent, FormHTMLAttributes } from 'react';
+import { FormEvent } from 'react';
+import { Form, FormProps } from 'react-bootstrap';
 
-interface SearchBarRootProps extends FormHTMLAttributes<HTMLFormElement> {
+interface SearchBarRootProps extends FormProps {
   onSubmit: () => void;
   className?: string;
 }
@@ -15,9 +16,9 @@ export function SearchBarRoot({
   };
 
   return (
-    <form
+    <Form
       onSubmit={handleSubmit}
-      className={`d-flex ${className || ''}`}
+      className={`d-flex gap-2 ${className || ''}`}
       {...rest}
     />
   );
