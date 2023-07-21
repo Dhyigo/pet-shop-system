@@ -1,6 +1,5 @@
 import { Link } from 'react-router-dom';
 import { NavBar } from '../NavBar';
-import { SearchBar } from '../SearchBar';
 import { MenuOption } from '../../models/components/Navbar';
 
 const MenuOptions: MenuOption[] = [
@@ -11,10 +10,6 @@ const MenuOptions: MenuOption[] = [
 ];
 
 export function Header() {
-  const handleSearch = () => {
-    console.log('Buscando');
-  };
-
   return (
     <header className="navbar navbar-expand-lg  navbar-dark bg-success">
       <div className="container">
