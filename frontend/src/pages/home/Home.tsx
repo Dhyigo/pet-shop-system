@@ -3,7 +3,7 @@ import { MdPets } from 'react-icons/md';
 import { ImProfile } from 'react-icons/im';
 import { SiHomeassistantcommunitystore } from 'react-icons/si';
 import { HiLocationMarker } from 'react-icons/hi';
-import { Button, Modal, Row } from 'react-bootstrap';
+import { Button, Col, Modal, Row } from 'react-bootstrap';
 import { FormProvider, useForm } from 'react-hook-form';
 import { z } from 'zod';
 import { zodResolver } from '@hookform/resolvers/zod';
@@ -193,21 +193,21 @@ export function Home() {
       </Modal>
 
       <Row className="row m-3 mt-5 g-3">
-        <div className="col">
+        <Col sm={12} md={6} xl={3}>
           <CardIcon icon={MdPets} title="Meus PETS" />
-        </div>
-        <div className="col">
+        </Col>
+        <Col sm={12} md={6} xl={3}>
           <CardIcon icon={BsFillCalendarCheckFill} title="Agendamentos" />
-        </div>
-        <div className="col">
+        </Col>
+        <Col sm={12} md={6} xl={3}>
           <CardIcon icon={ImProfile} title="Minha conta" />
-        </div>
-        <div className="col">
+        </Col>
+        <Col sm={12} md={6} xl={3}>
           <CardIcon
             icon={SiHomeassistantcommunitystore}
             title="Minha empresa"
           />
-        </div>
+        </Col>
       </Row>
 
       <Footer />
