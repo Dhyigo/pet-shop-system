@@ -3,12 +3,12 @@ import { MdPets } from 'react-icons/md';
 import { ImProfile } from 'react-icons/im';
 import { SiHomeassistantcommunitystore } from 'react-icons/si';
 import { HiLocationMarker } from 'react-icons/hi';
-import { Button, Modal } from 'react-bootstrap';
+import { Button, Modal, Row } from 'react-bootstrap';
 import { FormProvider, useForm } from 'react-hook-form';
 import { z } from 'zod';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { useState } from 'react';
-import { Header, Footer, Table, Form } from '../../components';
+import { Header, Footer, Table, Form, CardIcon } from '../../components';
 
 interface PetShopData {
   id: number | string;
@@ -192,45 +192,23 @@ export function Home() {
         </Modal.Body>
       </Modal>
 
-      {/* TODO: COMPONENTIZAR CARDS */}
-      <div className="row m-3 mt-5">
-        <div className="col-3">
-          <div
-            className="card shadow bg-success d-flex justify-content-center align-items-center text-white"
-            style={{ height: '300px' }}
-          >
-            <MdPets size={100} color="white" />
-            <h4 className="mt-5">Meus PETS</h4>
-          </div>
+      <Row className="row m-3 mt-5 g-3">
+        <div className="col">
+          <CardIcon icon={MdPets} title="Meus PETS" />
         </div>
-        <div className="col-3">
-          <div
-            className="card shadow bg-success d-flex justify-content-center align-items-center text-white"
-            style={{ height: '300px' }}
-          >
-            <BsFillCalendarCheckFill size={100} color="white" />
-            <h4 className="mt-5">Agendamentos</h4>{' '}
-          </div>
+        <div className="col">
+          <CardIcon icon={BsFillCalendarCheckFill} title="Agendamentos" />
         </div>
-        <div className="col-3">
-          <div
-            className="card shadow bg-success d-flex justify-content-center align-items-center text-white"
-            style={{ height: '300px' }}
-          >
-            <ImProfile size={100} color="white" />
-            <h4 className="mt-5">Minha conta</h4>{' '}
-          </div>
+        <div className="col">
+          <CardIcon icon={ImProfile} title="Minha conta" />
         </div>
-        <div className="col-3">
-          <div
-            className="card shadow bg-success d-flex justify-content-center align-items-center text-white"
-            style={{ height: '300px' }}
-          >
-            <SiHomeassistantcommunitystore size={100} color="white" />
-            <h4 className="mt-5">Minha empresa</h4>{' '}
-          </div>
+        <div className="col">
+          <CardIcon
+            icon={SiHomeassistantcommunitystore}
+            title="Minha empresa"
+          />
         </div>
-      </div>
+      </Row>
 
       <Footer />
     </div>
