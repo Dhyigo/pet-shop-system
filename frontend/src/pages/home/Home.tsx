@@ -121,7 +121,10 @@ export function Home() {
                 <Table.Row key={data.id}>
                   <Table.Cells data={data} />
                   <td>
-                    <Button onClick={() => handleOpenModal(data)}>
+                    <Button
+                      onClick={() => handleOpenModal(data)}
+                      className="btn btn-success"
+                    >
                       Agendar
                     </Button>
                   </td>
