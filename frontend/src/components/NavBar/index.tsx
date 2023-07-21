@@ -4,6 +4,7 @@ import { NavBarBody } from './NavBarBody';
 import { NavBarMenu } from './NavBarMenu';
 import { NavBarLink } from './NavBarLink';
 import { NavBarButtonOpen } from './NavBarButtonOpen';
+import { NavBarUser } from './NavBarUser';
 
 export const NavBar = {
   Root: NavBarRoot,
@@ -12,4 +13,5 @@ export const NavBar = {
   Menu: NavBarMenu,
   Link: NavBarLink,
   ButtonOpen: NavBarButtonOpen,
+  User: NavBarUser,
 };

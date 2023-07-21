@@ -32,10 +32,7 @@ export function Header() {
           </NavBar.Header>
 
           <NavBar.Body>
-            <SearchBar.Root onSubmit={handleSearch} className="mb-3 my-lg-0">
-              <SearchBar.Input placeholder="Pesquise..." />
-              <SearchBar.Button variant="light" />
-            </SearchBar.Root>
+            <NavBar.User userName="Adriel"></NavBar.User>
 
             <NavBar.Menu>
               {MenuOptions.map((option) => (

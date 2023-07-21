@@ -13,6 +13,10 @@ export interface NavBarLinkProps {
   icon?: IconType;
 }
 
+export interface NavBarUserProps {
+  userName: string;
+}
+
 export interface MenuOption {
   label: string;
   path: string;
