@@ -1,11 +1,7 @@
 import { Link } from 'react-router-dom';
 import { NavBar } from '../NavBar';
 import { SearchBar } from '../SearchBar';
-
-interface MenuOption {
-  label: string;
-  path: string;
-}
+import { MenuOption } from '../../models/components/Navbar';
 
 const MenuOptions: MenuOption[] = [
   { label: 'Home', path: '/' },

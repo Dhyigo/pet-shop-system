@@ -1,11 +1,5 @@
-import { IconType } from 'react-icons';
 import { NavLink } from 'react-router-dom';
-
-interface NavBarLinkProps {
-  label: string;
-  path: string;
-  icon?: IconType;
-}
+import { NavBarLinkProps } from '../../models/components/Navbar';
 
 export function NavBarLink({ label, path, icon: Icon }: NavBarLinkProps) {
   return (

@@ -1,9 +1,5 @@
-import { InputHTMLAttributes } from 'react';
 import { useFormContext } from 'react-hook-form';
-
-interface FormInputProps extends InputHTMLAttributes<HTMLInputElement> {
-  name: string;
-}
+import { FormInputProps } from '../../models/components/Form';
 
 export function FormInput({ name, ...rest }: FormInputProps) {
   const { register } = useFormContext();

@@ -1,6 +1,4 @@
-import { TableHTMLAttributes } from 'react';
-
-type TableHeadProps = TableHTMLAttributes<HTMLTableSectionElement>;
+import { TableHeadProps } from '../../models/components/Table';
 
 export function TableHead(props: TableHeadProps) {
   return <thead {...props} />;

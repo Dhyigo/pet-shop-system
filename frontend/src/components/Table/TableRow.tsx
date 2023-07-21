@@ -1,7 +1,4 @@
-// Refatorar depois
-import { TableHTMLAttributes } from 'react';
-
-type TableRowProps = TableHTMLAttributes<HTMLTableRowElement>;
+import { TableRowProps } from '../../models/components/Table';
 
 export function TableRow(props: TableRowProps) {
   return <tr {...props} />;

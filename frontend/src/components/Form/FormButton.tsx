@@ -1,10 +1,5 @@
-import { ButtonHTMLAttributes } from 'react';
 import { Loading } from '../Loading/Loading';
-
-interface FormButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
-  text: string;
-  isLoading: boolean;
-}
+import { FormButtonProps } from '../../models/components/Form';
 
 export function FormButton({ text, isLoading, ...rest }: FormButtonProps) {
   return (

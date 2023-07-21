@@ -1,10 +1,5 @@
 import { Card } from 'react-bootstrap';
-import { IconType } from 'react-icons';
-
-interface CardIconProps {
-  icon: IconType;
-  title: string;
-}
+import { CardIconProps } from '../../models/components/CardIcon';
 
 export function CardIcon({ icon: Icon, title }: CardIconProps) {
   return (

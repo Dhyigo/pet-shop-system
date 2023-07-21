@@ -1,6 +1,4 @@
-interface TableHeadersProps {
-  headers: string[];
-}
+import { TableHeadersProps } from '../../models/components/Table';
 
 export function TableHeaders({ headers }: TableHeadersProps) {
   return (

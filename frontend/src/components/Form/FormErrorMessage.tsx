@@ -1,8 +1,5 @@
 import { useFormContext } from 'react-hook-form';
-
-interface ErrorMessageProps {
-  field: string;
-}
+import { ErrorMessageProps } from '../../models/components/Form';
 
 export function FormErrorMessage({ field }: ErrorMessageProps) {
   const {

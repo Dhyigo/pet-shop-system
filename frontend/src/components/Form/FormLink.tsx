@@ -1,10 +1,6 @@
-import { Link, LinkProps } from 'react-router-dom';
+import { Link } from 'react-router-dom';
+import { FormLinkProps } from '../../models/components/Form';
 
-interface FormLinkProps extends LinkProps {
-  to: string;
-  text: string;
-  variant?: 'left' | 'center' | 'right';
-}
 export function FormLink({ to, text, variant, ...rest }: FormLinkProps) {
   return (
     <div className={`col-12 text-${variant || 'center'}`}>

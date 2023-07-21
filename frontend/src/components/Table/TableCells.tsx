@@ -1,10 +1,4 @@
-interface Data {
-  id: number | string;
-}
-
-interface TableCellsProps {
-  data: Data & Record<string, any>;
-}
+import { TableCellsProps } from '../../models/components/Table';
 
 export function TableCells({ data }: TableCellsProps) {
   const { id: dataId, ...dataRest } = data;

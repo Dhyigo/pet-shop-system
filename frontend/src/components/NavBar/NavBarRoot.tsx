@@ -1,6 +1,4 @@
-import { HtmlHTMLAttributes } from 'react';
-
-type NavBarRootProps = HtmlHTMLAttributes<HTMLDivElement>;
+import { NavBarRootProps } from '../../models/components/Navbar';
 
 export function NavBarRoot({ children }: NavBarRootProps) {
   return (

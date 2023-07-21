@@ -1,9 +1,6 @@
-import { Button, ButtonProps } from 'react-bootstrap';
+import { Button } from 'react-bootstrap';
 import { BsSearch } from 'react-icons/bs';
-
-interface SearchBarButtonProps extends ButtonProps {
-  className?: string;
-}
+import { SearchBarButtonProps } from '../../models/components/SearchBar';
 
 export function SearchBarButton({ className, ...rest }: SearchBarButtonProps) {
   return (

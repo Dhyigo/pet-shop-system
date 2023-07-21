@@ -1,10 +1,7 @@
 import { FormEvent } from 'react';
-import { Form, FormProps } from 'react-bootstrap';
+import { Form } from 'react-bootstrap';
+import { SearchBarRootProps } from '../../models/components/SearchBar';
 
-interface SearchBarRootProps extends FormProps {
-  onSubmit: () => void;
-  className?: string;
-}
 export function SearchBarRoot({
   onSubmit,
   className,

@@ -1,8 +1,4 @@
-import { ReactNode } from 'react';
-
-interface NavBarHeaderProps {
-  children?: ReactNode;
-}
+import { NavBarHeaderProps } from '../../models/components/Navbar';
 
 export function NavBarHeader({ children }: NavBarHeaderProps) {
   return (
