@@ -132,10 +132,10 @@ export function Home() {
         </Card.Body>
       </Card>
 
-      <Modal show={openModal} onHide={() => setOpenModal(false)}>
-        <Modal.Header closeButton>
+      <Modal show={openModal} onHide={() => setOpenModal(false)} size="lg">
+        <Modal.Header closeButton className="bg-success text-white">
           <Modal.Title>
-            Pet Shop
+            Novo Agendamento
             <span className="text-success"> {petShopSelected.first}</span>
           </Modal.Title>
         </Modal.Header>
@@ -143,10 +143,22 @@ export function Home() {
         <Modal.Body>
           <FormProvider {...createScheduleForm}>
             <Form.Root onSubmit={handleSubmit(createSchedule)}>
-              <Form.Input name="idPetShop" value={petShopSelected.id} hidden />
+              {/* <Form.Input name="idPetShop" value={petShopSelected.id} hidden /> */}
 
               <Form.Field>
-                <Form.Label htmlFor="pet">Escolha seu animal</Form.Label>
+                <Form.Label htmlFor="pet">Petshop</Form.Label>
+                <Form.Select name="pet">
+                  <option value={petShopSelected.id}>
+                    {petShopSelected.first}
+                  </option>
+                  <option value="cat">Gato</option>
+                  <option value="dog">Cachorro</option>
+                </Form.Select>
+                <Form.ErrorMessage field="pet" />
+              </Form.Field>
+
+              <Form.Field>
+                <Form.Label htmlFor="pet">Animal/Pet</Form.Label>
                 <Form.Select name="pet">
                   <option value="cat">Gato</option>
                   <option value="dog">Cachorro</option>
@@ -155,13 +167,13 @@ export function Home() {
               </Form.Field>
 
               <Form.Field>
-                <Form.Label htmlFor="date">Escolha seu animal</Form.Label>
+                <Form.Label htmlFor="date">Data do agendamento</Form.Label>
                 <Form.Input name="date" type="date" />
                 <Form.ErrorMessage field="date" />
               </Form.Field>
 
               <Form.Field>
-                <Form.Label htmlFor="service">Escolha seu animal</Form.Label>
+                <Form.Label htmlFor="service">Serviços</Form.Label>
                 <Form.Select name="service">
                   <option value="bath">Banho</option>
                   <option value="tosa">SÓ TOSA</option>
@@ -171,7 +183,13 @@ export function Home() {
                 <Form.ErrorMessage field="service" />
               </Form.Field>
 
-              <Form.Button isLoading={isLoading} text="Agendar" />
+              <div className="row">
+                <Form.Button
+                  isLoading={isLoading}
+                  text="Próximo"
+                  className="btn btn-success btn-lg btn-block w-100"
+                />
+              </div>
             </Form.Root>
           </FormProvider>
         </Modal.Body>
