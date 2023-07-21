@@ -83,7 +83,7 @@ export function Home() {
 
   return (
     <LayoutBase>
-      <Card className="m-4 shadow">
+      <Card className="my-4 shadow">
         <Card.Header className="bg-success text-light p-4">
           <Row className="align-items-center">
             <Col>
@@ -177,7 +177,7 @@ export function Home() {
         </Modal.Body>
       </Modal>
 
-      <Row className="row m-3 mt-5 g-3">
+      <Row className="row mb-3 mt-5 g-3">
         <Col sm={12} md={6} xl={3}>
           <CardIcon icon={MdPets} title="Meus PETS" />
         </Col>
