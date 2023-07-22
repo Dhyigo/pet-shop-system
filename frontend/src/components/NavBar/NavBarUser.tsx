@@ -1,15 +1,21 @@
 import { Dropdown } from 'react-bootstrap';
-import { NavBarUserProps } from '../../models/components/Navbar';
 import { BiSolidUserCircle } from 'react-icons/bi';
-import { userServices } from '../../services';
 import { useNavigate } from 'react-router-dom';
 
-export function NavBarUser(props: NavBarUserProps) {
+import { NavBarUserProps } from '../../models/components/Navbar';
+import { userServices } from '../../services';
+
+export function NavBarUser({ userName }: NavBarUserProps) {
   const navigate = useNavigate();
+
+  const [userName, setUserName] = useState('');
+
+  useEffect(() => {}, []);
+
   return (
     <Dropdown>
       <Dropdown.Toggle variant="light" id="dropdown-basic">
-        <span className="m-2">{props.userName}</span>
+        <span className="m-2">{userName}</span>
         <BiSolidUserCircle size={35} />
       </Dropdown.Toggle>
 

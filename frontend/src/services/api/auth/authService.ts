@@ -3,7 +3,7 @@ import { User } from '../../../models/Auth';
 import { api } from '../api';
 import { storage } from '../../../storage/localStorage';
 
-const STORAGE_KEY = '@auth';
+export const STORAGE_KEY = '@auth';
 
 const isAuthenticated = (): boolean => storage.get(STORAGE_KEY) != null;
 
