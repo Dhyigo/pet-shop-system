@@ -8,7 +8,12 @@ const get = <T>(key: string): T | null => {
   return data ? JSON.parse(data) : null;
 };
 
+const remove = (key: string): void => {
+  localStorage.removeItem(key);
+};
+
 export const storage = {
   set,
   get,
+  remove,
 };

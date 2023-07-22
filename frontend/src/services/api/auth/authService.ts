@@ -28,7 +28,10 @@ const login = async (
   }
 };
 
+const logOut = (): void => storage.remove(STORAGE_KEY);
+
 export const userServices = {
   login,
+  logOut,
   isAuthenticated,
 };
