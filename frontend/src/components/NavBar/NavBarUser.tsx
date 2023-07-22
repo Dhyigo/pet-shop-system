@@ -1,16 +1,23 @@
+import { useEffect, useState } from 'react';
 import { Dropdown } from 'react-bootstrap';
 import { BiSolidUserCircle } from 'react-icons/bi';
 import { useNavigate } from 'react-router-dom';
 
-import { NavBarUserProps } from '../../models/components/Navbar';
 import { userServices } from '../../services';
+import { storage } from '../../storage/localStorage';
+import { storageKeys } from '../../storage';
+import { User } from '../../models/Auth';
 
-export function NavBarUser({ userName }: NavBarUserProps) {
+export function NavBarUser() {
   const navigate = useNavigate();
 
   const [userName, setUserName] = useState('');
 
-  useEffect(() => {}, []);
+  useEffect(() => {
+    const user = storage.get<User>(storageKeys.AUTH);
+
+    setUserName(user?.userName || 'Desconhecido');
+  }, []);
 
   return (
     <Dropdown>
