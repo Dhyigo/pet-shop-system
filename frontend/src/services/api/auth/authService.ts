@@ -2,10 +2,9 @@ import { ApiException } from '../../../models/Exceptions';
 import { User } from '../../../models/Auth';
 import { api } from '../api';
 import { storage } from '../../../storage/localStorage';
+import { storageKeys } from '../../../storage';
 
-export const STORAGE_KEY = '@auth';
-
-const isAuthenticated = (): boolean => storage.get(STORAGE_KEY) != null;
+const isAuthenticated = (): boolean => storage.get(storageKeys.AUTH) != null;
 
 const login = async (
   email: string,
@@ -20,7 +19,7 @@ const login = async (
       return new ApiException('Email ou senha inválido');
     }
 
-    storage.set(STORAGE_KEY, data[0]);
+    storage.set(storageKeys.AUTH, data[0]);
 
     return data[0];
   } catch {
@@ -28,7 +27,7 @@ const login = async (
   }
 };
 
-const logOut = (): void => storage.remove(STORAGE_KEY);
+const logOut = (): void => storage.remove(storageKeys.AUTH);
 
 export const userServices = {
   login,
