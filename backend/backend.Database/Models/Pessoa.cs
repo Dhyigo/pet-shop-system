@@ -9,7 +9,7 @@ namespace backend.Database.Models
         public int CodPessoa { get; set; }
 
         [ForeignKey("CodUsuario")]
-        public Usuario CodUsuario { get; set; } = null!;
+        public int CodUsuario { get; set; }
 
         public string Nome { get; set; } = string.Empty;
 

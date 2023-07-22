@@ -1,19 +1,22 @@
-var builder = WebApplication.CreateBuilder(args);
+using backend.Database;
+using Microsoft.EntityFrameworkCore;
 
+var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 
 builder.Services.AddControllers();
-// Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddSwaggerGen();
+
+// Sqlite Context
+builder.Services.AddDbContext<DatabaseContext>(context => context.UseSqlite("Data Source=PetshopSystem.db"));
 
 var app = builder.Build();
 
-// Configure the HTTP request pipeline.
-if (app.Environment.IsDevelopment())
+using (var scope = app.Services.CreateScope())
 {
-    app.UseSwagger();
-    app.UseSwaggerUI();
+    var db = scope.ServiceProvider.GetRequiredService<DatabaseContext>();
+    db.Database.Migrate();
+    db.Database.EnsureCreated();
 }
 
 app.UseAuthorization();

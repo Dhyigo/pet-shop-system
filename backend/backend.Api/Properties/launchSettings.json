@@ -3,12 +3,10 @@
     "backend": {
       "commandName": "Project",
       "dotnetRunMessages": true,
-      "launchBrowser": true,
-      "launchUrl": "swagger",
       "applicationUrl": "http://localhost:5211",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
-      }
+      } 
     }
   }
 }
