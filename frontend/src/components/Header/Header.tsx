@@ -27,7 +27,7 @@ export function Header() {
           </NavBar.Header>
 
           <NavBar.Body>
-            <NavBar.User userName="Adriel"></NavBar.User>
+            <NavBar.User />
 
             <NavBar.Menu>
               {MenuOptions.map((option) => (
