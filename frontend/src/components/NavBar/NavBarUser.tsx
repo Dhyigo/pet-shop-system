@@ -2,11 +2,7 @@ import { useEffect, useState } from 'react';
 import { Dropdown } from 'react-bootstrap';
 import { BiSolidUserCircle } from 'react-icons/bi';
 import { useNavigate } from 'react-router-dom';
-
 import { userServices } from '../../services';
-import { storage } from '../../storage/localStorage';
-import { storageKeys } from '../../storage';
-import { User } from '../../models/Auth';
 
 export function NavBarUser() {
   const navigate = useNavigate();
@@ -14,7 +10,7 @@ export function NavBarUser() {
   const [userName, setUserName] = useState('');
 
   useEffect(() => {
-    const user = storage.get<User>(storageKeys.AUTH);
+    const user = userServices.getUserInfos();
 
     setUserName(user?.userName || 'Desconhecido');
   }, []);
