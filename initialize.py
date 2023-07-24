@@ -1,8 +1,8 @@
 import subprocess
-import os
-from pathlib import Path
 
 #Inicializando Backend
+# WIP: TESTAR EM UM AMBIENTE LINUX (existem varios "tipos" de terminais no linux, temos que ver como o comando abaixo de se comporta em um ambiente linux)
+
 print("------------------------------------------")
 print("Inicializando BACKEND")
 print("------------------------------------------")
