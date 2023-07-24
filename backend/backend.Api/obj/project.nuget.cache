@@ -1,10 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "ubQTs9J0WpSaudyzljfJ2l0XU+ZD7/xfRg+IWQuu8D8J1AZOfs0v2mobrMnLVgGC6JGr81eQM8sbJPKUnDhFkA==",
+  "dgSpecHash": "uoZUB9VIH+EIuzaurlbBviDhLDc19kyczhqR06Vozeiq3wnfXTaE2U4BgJxh2YG2J35VHo/OkyLs5KdbgmvOqA==",
   "success": true,
   "projectFilePath": "C:\\Users\\PC\\Documents\\Trabalho\\Estudos\\Projects\\pet-shop-system\\backend\\backend.Api\\backend.Api.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\PC\\.nuget\\packages\\automapper\\12.0.1\\automapper.12.0.1.nupkg.sha512",
     "C:\\Users\\PC\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",
+    "C:\\Users\\PC\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",
     "C:\\Users\\PC\\.nuget\\packages\\microsoft.data.sqlite.core\\7.0.9\\microsoft.data.sqlite.core.7.0.9.nupkg.sha512",
     "C:\\Users\\PC\\.nuget\\packages\\microsoft.entityframeworkcore\\7.0.9\\microsoft.entityframeworkcore.7.0.9.nupkg.sha512",
     "C:\\Users\\PC\\.nuget\\packages\\microsoft.entityframeworkcore.abstractions\\7.0.9\\microsoft.entityframeworkcore.abstractions.7.0.9.nupkg.sha512",

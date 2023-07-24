@@ -1,4 +1,5 @@
 using backend.Database;
+using backend.Database.Repository;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -9,6 +10,9 @@ builder.Services.AddEndpointsApiExplorer();
 
 // Sqlite Context
 builder.Services.AddDbContext<DatabaseContext>(context => context.UseSqlite("Data Source=PetshopSystem.db"));
+
+// Dependency Injection
+builder.Services.AddScoped<UserRepository>();
 
 var app = builder.Build();
 
