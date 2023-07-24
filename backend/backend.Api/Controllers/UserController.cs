@@ -1,3 +1,7 @@
+using AutoMapper;
+using backend.Api.Dtos;
+using backend.Database.Models;
+using backend.Database.Repository;
 using Microsoft.AspNetCore.Mvc;
 
 namespace backend.Controllers
@@ -6,8 +10,11 @@ namespace backend.Controllers
     [Route("[controller]")]
     public class UserController : ControllerBase
     {
-        public UserController()
-        {}
+        private readonly UserRepository _userRepository;
+        public UserController(UserRepository userRepository)
+        {
+            _userRepository = userRepository;
+        }
 
         [HttpGet("{id}")]
         public IActionResult GetUserByID(int id)
@@ -16,8 +23,12 @@ namespace backend.Controllers
         }
 
         [HttpPost("create")]
-        public IActionResult CreateUser()
+        public async Task<IActionResult> CreateUser([FromBody] UsuarioDto newUser)
         {
+            // WIP: USAR AUTO-MAPPER
+            Usuario newUserModel = new Usuario();
+            await _userRepository.InsertUser(newUserModel);
+
             return Ok();
         }
     }
