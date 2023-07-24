@@ -31,7 +31,7 @@ Linux e macOS:
 * LINUX: Execute o comando ``` python initialize.py```
 * WINDOWS: Execute com o powerShell o arquivo ``` initialize.ps1```
 
-```Após este processo, o download da aplicação será realizado, e em seguida, o navegador irá abrir a página do sistema.```
+*Após este processo, o download da aplicação será realizado, e em seguida, o navegador abrirá a página do sistema.*
 
 ## 📫 Contribuindo para o PetShop-System
 
