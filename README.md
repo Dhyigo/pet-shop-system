@@ -50,9 +50,9 @@ Como alternativa, consulte a documentação do GitHub em [como criar uma solicit
 | Recurso | Link |
 | ------ | ------ |
 | Node JS | https://nodejs.org/en/ |
-| React JS | https://pt-br.reactjs.org/ |
+| React JS | https://react-icons.github.io/react-icons/ |
 | Bootstrap | https://getbootstrap.com/ |
-| Styled-icons | https://styled-icons.js.org/ |
+| React-icons | https://styled-icons.js.org/ |
 | .NET 6.0 | https://learn.microsoft.com/pt-br/dotnet/core/whats-new/dotnet-6 |
 | SQLite | https://www.sqlite.org/index.html |
 
