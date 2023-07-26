@@ -1,12 +1,5 @@
-import { HTMLAttributes } from 'react';
+import { Form, FormGroupProps } from 'react-bootstrap';
 
-export function FormField({
-  children,
-  ...rest
-}: HTMLAttributes<HTMLDivElement>) {
-  return (
-    <div className="form-row mb-3" {...rest}>
-      <div className="col-12">{children}</div>
-    </div>
-  );
+export function FormField({ ...rest }: FormGroupProps) {
+  return <Form.Group className="mb-3" {...rest} />;
 }
