@@ -41,6 +41,7 @@ bld/
 msbuild.log
 msbuild.err
 msbuild.wrn
+obj/
 
 # Databse
 PetshopSystem.db
