@@ -10,8 +10,8 @@ namespace backend.Database
             : base(options)
         { }
 
-        public DbSet<Usuario> Usuario { get; set; }
-        public DbSet<Pessoa> Pessoa { get; set; }
+        public virtual DbSet<Usuario> Usuario { get; set; }
+        public virtual DbSet<Pessoa> Pessoa { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
