@@ -13,6 +13,8 @@ namespace backend.Database.Repository
         public async Task InsertUser(Usuario user)
         {
             await _databaseContext.AddAsync(user);
+
+            await _databaseContext.SaveChangesAsync();
         }
     }
 }
