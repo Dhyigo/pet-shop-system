@@ -26,7 +26,13 @@ namespace backend.Controllers
         public async Task<IActionResult> CreateUser([FromBody] UsuarioDto newUser)
         {
             // WIP: USAR AUTO-MAPPER
-            Usuario newUserModel = new Usuario();
+            Usuario newUserModel = new Usuario()
+            {
+                Nome = newUser.Nome,
+                Email = newUser.Email,
+                Senha = newUser.Senha
+            };
+            
             await _userRepository.InsertUser(newUserModel);
 
             return Ok();
