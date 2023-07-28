@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Mvc;
 namespace backend.Controllers
 {
     [ApiController]
-    [Route("[controller]")]
+    [Route("api/[controller]")]
     public class UserController : ControllerBase
     {
         private readonly UserRepository _userRepository;
@@ -26,7 +26,7 @@ namespace backend.Controllers
         public async Task<IActionResult> CreateUser([FromBody] UsuarioDto newUser)
         {
             // WIP: USAR AUTO-MAPPER
-            Usuario newUserModel = new Usuario()
+            var newUserModel = new Usuario()
             {
                 Nome = newUser.Nome,
                 Email = newUser.Email,
