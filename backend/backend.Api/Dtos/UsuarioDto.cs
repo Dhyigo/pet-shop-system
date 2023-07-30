@@ -14,8 +14,6 @@ namespace backend.Api.Dtos
         [Required]
         public string Senha { get; set; } = string.Empty;
 
-        [Required]
         public UsuarioTipos Tipo { get; set; } = UsuarioTipos.comum;
-
     }
 }
