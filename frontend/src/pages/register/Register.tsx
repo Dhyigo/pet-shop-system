@@ -7,14 +7,34 @@ import { BiSolidUserCircle } from 'react-icons/bi';
 import { Form } from '../../components';
 import './Register.css';
 
-const createRegisterSchema = z.object({
-  name: z.string().nonempty('Nome é obrigatório'),
-});
+const createRegisterSchema = z
+  .object({
+    userName: z.string().nonempty('Nome de usuário é obrigatório'),
+    email: z.string().email('Coloque um email válido'),
+    password: z.string().min(8, 'Senha deve ter no mínimo 8 caracteres'),
+    confirmPassword: z.string().nonempty('Não pode está vazio'),
+  })
+  .refine(({ password, confirmPassword }) => password === confirmPassword, {
+    message: 'Não está igual a senha',
+    path: ['confirmPassword'],
+  });
+
+type CreateRegisterData = z.infer<typeof createRegisterSchema>;
 
 export function Register() {
-  const createRegisterForm = useForm({
+  const createRegisterForm = useForm<CreateRegisterData>({
     resolver: zodResolver(createRegisterSchema),
+    mode: 'onBlur',
   });
+
+  const {
+    handleSubmit,
+    formState: { isLoading },
+  } = createRegisterForm;
+
+  const createRegister = (data: CreateRegisterData) => {
+    console.log(data);
+  };
 
   return (
     <section className="register-body">
@@ -27,18 +47,20 @@ export function Register() {
         </Card.Header>
         <Card.Body>
           <FormProvider {...createRegisterForm}>
-            <Form.Root>
+            <Form.Root onSubmit={handleSubmit(createRegister)}>
               <Form.Field>
                 <Form.Label htmlFor="userName">Nome de usuário</Form.Label>
                 <Form.Input
                   placeholder="Digite seu nome de usuário"
                   name="userName"
                 />
+                <Form.ErrorMessage field="userName" />
               </Form.Field>
 
               <Form.Field>
                 <Form.Label htmlFor="email">E-mail</Form.Label>
                 <Form.Input placeholder="Digite seu E-mail" name="email" />
+                <Form.ErrorMessage field="email" />
               </Form.Field>
 
               <Row>
@@ -49,6 +71,7 @@ export function Register() {
                     placeholder="Digite uma senha"
                     name="password"
                   />
+                  <Form.ErrorMessage field="password" />
                 </Form.Field>
 
                 <Form.Field className="col-12 col-md-6">
@@ -60,11 +83,11 @@ export function Register() {
                     placeholder="Repetir a senha"
                     name="confirmPassword"
                   />
+                  <Form.ErrorMessage field="confirmPassword" />
                 </Form.Field>
               </Row>
+              <Form.Button text="Criar conta" isLoading={isLoading} />
             </Form.Root>
-
-            <Form.Button text="Criar conta" isLoading />
           </FormProvider>
         </Card.Body>
       </Card>
