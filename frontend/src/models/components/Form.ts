@@ -1,5 +1,8 @@
 import { ButtonHTMLAttributes, InputHTMLAttributes } from 'react';
-import { FormSelectProps as SelectProps } from 'react-bootstrap';
+import {
+  FormGroupProps,
+  FormSelectProps as SelectProps,
+} from 'react-bootstrap';
 import { LinkProps } from 'react-router-dom';
 
 export interface FormButtonProps
@@ -24,4 +27,8 @@ export interface FormLinkProps extends LinkProps {
 
 export interface FormSelectProps extends SelectProps {
   name: string;
+}
+
+export interface FormFieldProps extends FormGroupProps {
+  className?: string;
 }
