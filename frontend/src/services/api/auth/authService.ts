@@ -30,9 +30,22 @@ const login = async (
   }
 };
 
+const create = async (UserData: User): Promise<User | ApiException> => {
+  try {
+    const { data } = await api.post<User>('/users', UserData);
+
+    storage.set(AUTH_KEY, data);
+
+    return data;
+  } catch {
+    return new ApiException('Erro ao criar usuário');
+  }
+};
+
 const logOut = (): void => storage.remove(AUTH_KEY);
 
 export const userServices = {
+  create,
   login,
   logOut,
   isAuthenticated,
