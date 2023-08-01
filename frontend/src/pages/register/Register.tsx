@@ -1,3 +1,4 @@
+import { useNavigate } from 'react-router-dom';
 import { z } from 'zod';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { FormProvider, useForm } from 'react-hook-form';
@@ -6,8 +7,9 @@ import { BiSolidUserCircle } from 'react-icons/bi';
 
 import { Form } from '../../components';
 import './Register.css';
+import { ApiException, userServices } from '../../services';
 
-const createRegisterSchema = z
+const createUserSchema = z
   .object({
     userName: z.string().nonempty('Nome de usuário é obrigatório'),
     email: z.string().email('Coloque um email válido'),
@@ -17,23 +19,36 @@ const createRegisterSchema = z
   .refine(({ password, confirmPassword }) => password === confirmPassword, {
     message: 'Não está igual a senha',
     path: ['confirmPassword'],
+  })
+  .transform((data) => {
+    const { confirmPassword, ...rest } = data;
+    return rest;
   });
 
-type CreateRegisterData = z.infer<typeof createRegisterSchema>;
+type CreateUserData = z.infer<typeof createUserSchema>;
 
 export function Register() {
-  const createRegisterForm = useForm<CreateRegisterData>({
-    resolver: zodResolver(createRegisterSchema),
+  const navigate = useNavigate();
+
+  const createUserForm = useForm<CreateUserData>({
+    resolver: zodResolver(createUserSchema),
     mode: 'onBlur',
   });
 
   const {
     handleSubmit,
     formState: { isLoading },
-  } = createRegisterForm;
+  } = createUserForm;
 
-  const createRegister = (data: CreateRegisterData) => {
-    console.log(data);
+  const createUser = async (data: CreateUserData) => {
+    const response = await userServices.create(data);
+
+    if (response instanceof ApiException) {
+      createUserForm.setError('root', { message: response.message });
+      return;
+    }
+
+    navigate('/');
   };
 
   return (
@@ -46,8 +61,8 @@ export function Register() {
           </Card.Title>
         </Card.Header>
         <Card.Body>
-          <FormProvider {...createRegisterForm}>
-            <Form.Root onSubmit={handleSubmit(createRegister)}>
+          <FormProvider {...createUserForm}>
+            <Form.Root onSubmit={handleSubmit(createUser)}>
               <Form.Field>
                 <Form.Label htmlFor="userName">Nome de usuário</Form.Label>
                 <Form.Input
@@ -86,6 +101,9 @@ export function Register() {
                   <Form.ErrorMessage field="confirmPassword" />
                 </Form.Field>
               </Row>
+              <div className="text-center">
+                <Form.ErrorMessage field="root" />
+              </div>
               <Form.Button text="Criar conta" isLoading={isLoading} />
             </Form.Root>
           </FormProvider>
