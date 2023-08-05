@@ -1,6 +1,5 @@
 ﻿using backend.Database.Models;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.Configuration;
 
 namespace backend.Database
 {
@@ -12,6 +11,8 @@ namespace backend.Database
 
         public virtual DbSet<Usuario> Usuario { get; set; }
         public virtual DbSet<Pessoa> Pessoa { get; set; }
+        public virtual DbSet<Servico> Servico { get; set; }
+        public virtual DbSet<Agendamento> Agendamento { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {

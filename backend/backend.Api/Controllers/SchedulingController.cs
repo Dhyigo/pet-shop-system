@@ -7,7 +7,9 @@ namespace backend.Controllers
     public class SchedulingController : ControllerBase
     {
         public SchedulingController()
-        {}
+        {
+                        
+        }
 
         [HttpGet("{id}")]
         public IActionResult GetSchedulingByID(int id)

@@ -1,4 +1,3 @@
-using AutoMapper;
 using backend.Api.Dtos;
 using backend.Database.Models;
 using backend.Database.Repository;
