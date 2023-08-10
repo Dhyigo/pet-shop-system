@@ -12,7 +12,7 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddDbContext<DatabaseContext>(context => context.UseSqlite("Data Source=PetshopSystem.db"));
 
 // Dependency Injection
-builder.Services.AddScoped<UserRepository>();
+builder.Services.AddScoped<SchedulingRepository>();
 
 var app = builder.Build();
 

@@ -1,4 +1,7 @@
+using backend.Api.Dtos;
+using backend.Database.Models;
 using Microsoft.AspNetCore.Mvc;
+using backend.Database.Repository;
 
 namespace backend.Controllers
 {
@@ -6,9 +9,10 @@ namespace backend.Controllers
     [Route("api/[controller]")]
     public class SchedulingController : ControllerBase
     {
-        public SchedulingController()
+        private readonly SchedulingRepository _schedulingRepository;
+        public SchedulingController(SchedulingRepository schedulingRepository)
         {
-                        
+            _schedulingRepository = schedulingRepository;
         }
 
         [HttpGet("{id}")]
@@ -18,8 +22,18 @@ namespace backend.Controllers
         }
 
         [HttpPost("create")]
-        public IActionResult CreateScheduling()
+        public async Task<IActionResult> CreateScheduling([FromBody] AgendamentoDto newScheduling)
         {
+            var newSchedulingModel = new Agendamento() {
+                CodCliente = newScheduling.CodCliente,
+                CodEmpresa = newScheduling.CodEmpresa,
+                Total = newScheduling.Total,
+                DataInicio = newScheduling.DataInicio,
+                DataFim = newScheduling.DataFim,
+            };
+
+            await _schedulingRepository.InsertScheduling(newSchedulingModel);
+            
             return Ok();
         }
     }

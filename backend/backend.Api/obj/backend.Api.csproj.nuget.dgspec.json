@@ -1,40 +1,33 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\PC\\Documents\\Trabalho\\Estudos\\Projects\\pet-shop-system\\backend\\backend.Api\\backend.Api.csproj": {}
+    "/home/diegosilva/Documentos/Projetos/pet-shop-system/backend/backend.Api/backend.Api.csproj": {}
   },
   "projects": {
-    "C:\\Users\\PC\\Documents\\Trabalho\\Estudos\\Projects\\pet-shop-system\\backend\\backend.Api\\backend.Api.csproj": {
+    "/home/diegosilva/Documentos/Projetos/pet-shop-system/backend/backend.Api/backend.Api.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\PC\\Documents\\Trabalho\\Estudos\\Projects\\pet-shop-system\\backend\\backend.Api\\backend.Api.csproj",
+        "projectUniqueName": "/home/diegosilva/Documentos/Projetos/pet-shop-system/backend/backend.Api/backend.Api.csproj",
         "projectName": "backend.Api",
-        "projectPath": "C:\\Users\\PC\\Documents\\Trabalho\\Estudos\\Projects\\pet-shop-system\\backend\\backend.Api\\backend.Api.csproj",
-        "packagesPath": "C:\\Users\\PC\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\PC\\Documents\\Trabalho\\Estudos\\Projects\\pet-shop-system\\backend\\backend.Api\\obj\\",
+        "projectPath": "/home/diegosilva/Documentos/Projetos/pet-shop-system/backend/backend.Api/backend.Api.csproj",
+        "packagesPath": "/home/diegosilva/.nuget/packages/",
+        "outputPath": "/home/diegosilva/Documentos/Projetos/pet-shop-system/backend/backend.Api/obj/",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\DevExpress 20.2\\Components\\Offline Packages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\PC\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\DevExpress 20.2.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "/home/diegosilva/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net6.0"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\DevExpress 20.2\\Components\\System\\Components\\Packages": {},
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\Users\\PC\\Documents\\Trabalho\\Estudos\\Projects\\pet-shop-system\\backend\\backend.Database\\backend.Database.csproj": {
-                "projectPath": "C:\\Users\\PC\\Documents\\Trabalho\\Estudos\\Projects\\pet-shop-system\\backend\\backend.Database\\backend.Database.csproj"
+              "/home/diegosilva/Documentos/Projetos/pet-shop-system/backend/backend.Database/backend.Database.csproj": {
+                "projectPath": "/home/diegosilva/Documentos/Projetos/pet-shop-system/backend/backend.Database/backend.Database.csproj"
               }
             }
           }
@@ -49,6 +42,10 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "dependencies": {
+            "AutoMapper": {
+              "target": "Package",
+              "version": "[12.0.1, )"
+            },
             "Microsoft.EntityFrameworkCore": {
               "target": "Package",
               "version": "[7.0.9, )"
@@ -80,10 +77,17 @@
             "net47",
             "net471",
             "net472",
-            "net48"
+            "net48",
+            "net481"
           ],
           "assetTargetFallback": true,
           "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.NETCore.App.Host.linux-x64",
+              "version": "[6.0.20, 6.0.20]"
+            }
+          ],
           "frameworkReferences": {
             "Microsoft.AspNetCore.App": {
               "privateAssets": "none"
@@ -92,39 +96,89 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.300\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/lib/dotnet/sdk/7.0.109/RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\PC\\Documents\\Trabalho\\Estudos\\Projects\\pet-shop-system\\backend\\backend.Database\\backend.Database.csproj": {
+    "/home/diegosilva/Documentos/Projetos/pet-shop-system/backend/backend.Core/backend.Core.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\PC\\Documents\\Trabalho\\Estudos\\Projects\\pet-shop-system\\backend\\backend.Database\\backend.Database.csproj",
-        "projectName": "backend.Database",
-        "projectPath": "C:\\Users\\PC\\Documents\\Trabalho\\Estudos\\Projects\\pet-shop-system\\backend\\backend.Database\\backend.Database.csproj",
-        "packagesPath": "C:\\Users\\PC\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\PC\\Documents\\Trabalho\\Estudos\\Projects\\pet-shop-system\\backend\\backend.Database\\obj\\",
+        "projectUniqueName": "/home/diegosilva/Documentos/Projetos/pet-shop-system/backend/backend.Core/backend.Core.csproj",
+        "projectName": "backend.Core",
+        "projectPath": "/home/diegosilva/Documentos/Projetos/pet-shop-system/backend/backend.Core/backend.Core.csproj",
+        "packagesPath": "/home/diegosilva/.nuget/packages/",
+        "outputPath": "/home/diegosilva/Documentos/Projetos/pet-shop-system/backend/backend.Core/obj/",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\DevExpress 20.2\\Components\\Offline Packages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\PC\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\DevExpress 20.2.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "/home/diegosilva/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net6.0"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\DevExpress 20.2\\Components\\System\\Components\\Packages": {},
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/lib/dotnet/sdk/7.0.109/RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "/home/diegosilva/Documentos/Projetos/pet-shop-system/backend/backend.Database/backend.Database.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/home/diegosilva/Documentos/Projetos/pet-shop-system/backend/backend.Database/backend.Database.csproj",
+        "projectName": "backend.Database",
+        "projectPath": "/home/diegosilva/Documentos/Projetos/pet-shop-system/backend/backend.Database/backend.Database.csproj",
+        "packagesPath": "/home/diegosilva/.nuget/packages/",
+        "outputPath": "/home/diegosilva/Documentos/Projetos/pet-shop-system/backend/backend.Database/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/home/diegosilva/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {
+              "/home/diegosilva/Documentos/Projetos/pet-shop-system/backend/backend.Core/backend.Core.csproj": {
+                "projectPath": "/home/diegosilva/Documentos/Projetos/pet-shop-system/backend/backend.Core/backend.Core.csproj"
+              }
+            }
           }
         },
         "warningProperties": {
@@ -160,7 +214,8 @@
             "net47",
             "net471",
             "net472",
-            "net48"
+            "net48",
+            "net481"
           ],
           "assetTargetFallback": true,
           "warn": true,
@@ -169,7 +224,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.300\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/lib/dotnet/sdk/7.0.109/RuntimeIdentifierGraph.json"
         }
       }
     }
